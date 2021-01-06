@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joguinho</title>
+    <script src="jogo.js"></script>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body onresize="ajustaTamanhoPalcoJogo()">
+    <audio autoplay id="demo" src="musica/Quiet Riot - Metal Health (Bang Your Head) - HQ Audio.mp3"></audio>
+    <div>
+      <button onclick="document.getElementById('demo').play()"><i class="fas fa-play" width="300px"></i></button>
+      <button onclick="document.getElementById('demo').pause()"><i class="fas fa-pause" width="300px"></i></button>
+    </div>
+
+    <div class="painel">
+        <div class="vidas">
+            <img id="v1" src="imagens/coracao_cheio.png">
+            <img id="v2" src="imagens/coracao_cheio.png">
+            <img id="v3" src="imagens/coracao_cheio.png">
+
+        </div>
+        <div class="cronometro">Tempo restante: <span id="cronometro"></span></div>
+    </div>
+
+    <script>
+        document.getElementById('cronometro').innerHTML = tempo
+
+        var criaMosquito = setInterval(function() {
+            posicaoRandomica()
+        }, criaMosquitoTempo)
+    </script>
+    
+</body>
+</html>
